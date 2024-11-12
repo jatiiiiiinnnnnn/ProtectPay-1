@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProtectPay Dashboard</title>
+  <title>ProtectPay Guardian Dashboard</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aptos@1.3.16/dist/index.global.js"></script>
 </head>
 <body>
   <!-- Navbar -->
@@ -24,9 +25,9 @@
   <section class="profile-section">
     <div class="profile-pic"></div>
     <div class="profile-info">
-      <h2>Welcome, <span id="guardian-name">Name</span>!</h2>
-      <p>Email: <span id="guardian-email">guardian@example.com</span></p>
-      <p>Connected to: <span id="ward-username">WardUsername</span></p>
+      <h2>Welcome, <span id="guardian-name">Jimmy</span>!</h2>
+      <p>Email: <span id="guardian-email">jimmy123@gmail.com</span></p>
+      <p>Connected to: <span id="ward-username">John</span></p>
     </div>
   </section>
 
@@ -41,14 +42,35 @@
           <button class="accept-btn" onclick="moveToPastApproval(this)">✓</button>
           <button class="reject-btn" onclick="moveToPastApproval(this, false)">✕</button>
         </li>
-        <!-- Add more requests here as needed -->
+        <li>
+          <span>Request: $150</span>
+          <button class="accept-btn" onclick="moveToPastApproval(this)">✓</button>
+          <button class="reject-btn" onclick="moveToPastApproval(this, false)">✕</button>
+        </li>
+        <li>
+          <span>Request: $200</span>
+          <button class="accept-btn" onclick="moveToPastApproval(this)">✓</button>
+          <button class="reject-btn" onclick="moveToPastApproval(this, false)">✕</button>
+        </li>
       </ul>
     </div>
 
     <!-- Past Approval Card -->
     <div class="card" id="past-approval">
-      <h3>Past Approval</h3>
+      <h3>Past Approvals</h3>
       <ul id="past-list"></ul>
+    </div>
+
+    <!-- Monthly Money Request Card -->
+    <div class="card" id="monthly-request-card">
+      <h3>Monthly Money Request</h3>
+      <ul id="monthly-request-list">
+        <li>
+          <span>Request: $300</span>
+          <button class="accept-btn" onclick="moveToPastApproval(this)">✓</button>
+          <button class="reject-btn" onclick="moveToPastApproval(this, false)">✕</button>
+        </li>
+      </ul>
     </div>
   </section>
 
